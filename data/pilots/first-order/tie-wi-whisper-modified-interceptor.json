@@ -108,6 +108,42 @@
       "artwork": "???",
       "image": "???",
       "keywords": ["TIE"]
+    },
+    {
+      "name": "Whirlwind",
+      "xws": "whirlwind",
+      "initiative": 3,
+      "limited": 1,
+      "shipAbility": {
+        "name": "Heavy Weapon Turret",
+        "text": "You can rotate your [Single Turret Arc] indicator only to your [Front Arc] or [Rear Arc]. You must treat the [Front Arc] requirement of your equipped [Missile] upgrades as [Single Turret Arc]."
+      },
+      "ability": "Before you engage, you may remove any number of jam tokens, then you may gain 1 focus token for each enemy ship that has you in its [Front Arc].",
+      "hyperspace": false,
+      "cost": 0,
+      "slots": ["Talent", "Talent", "Missile", "Tech", "Configuration"],
+      "ffg": -999,
+      "artwork": "???",
+      "image": "???",
+      "keywords": ["TIE"]
+    },
+    {
+      "name": "Nightfall",
+      "xws": "nightfall",
+      "initiative": 4,
+      "limited": 1,
+      "shipAbility": {
+        "name": "Heavy Weapon Turret",
+        "text": "You can rotate your [Single Turret Arc] indicator only to your [Front Arc] or [Rear Arc]. You must treat the [Front Arc] requirement of your equipped [Missile] upgrades as [Single Turret Arc]."
+      },
+      "ability": "After you fully execute a maneuver or perform a [Boost] action, each ship you moved through gains 2 jam tokens.",
+      "hyperspace": false,
+      "cost": 0,
+      "slots": ["Talent", "Talent", "Missile", "Tech", "Configuration"],
+      "ffg": -999,
+      "artwork": "???",
+      "image": "???",
+      "keywords": ["TIE"]
     }
   ],
   "icon": "???"
