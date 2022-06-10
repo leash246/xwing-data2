@@ -68,3 +68,7 @@ typings/
 
 # next.js build output
 .next
+/XWingCards.Api/obj
+/XWingCards.Api/bin/Debug/net6.0
+/XWingCards.Api/.vs
+/.vs
