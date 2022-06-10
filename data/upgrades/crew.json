@@ -907,7 +907,7 @@
         "slots": ["Crew"],
         "force": { "value": 1, "recovers": 1 },
         "grants": [
-          { "type": "force", "value": { "side": ["dark"] }, "amount": 1 }
+          { "type": "force", "value": { "side": ["dark"] , "amount": 1 }}
         ],
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/Card_art_XW_U_136.jpg",
         "ffg": 361
@@ -2621,7 +2621,8 @@
             "type": "action",
             "value": { "type": "Coordinate", "difficulty": "Purple" }
           },
-          { "type": "slot", "value": "Illicit", "amount": 1 }
+          { "type": "slot", 
+            "value": {"type": "Illicit", "amount": 1 }}
         ],
         "image": "https://infinitearenas.com/xw2/images/upgrades/maul-doublecrew.png"
       }

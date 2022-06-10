@@ -122,7 +122,7 @@
         "type": "Modification",
         "text": "For those who cannot afford an enhanced shield generator, bolting additional plates onto the hull of a ship can serve as an adequate substitute.",
         "slots": ["Modification"],
-        "grants": [{ "type": "stat", "value": "hull", "amount": 1 }],
+        "grants": [{ "type": "stat", "value": {"type":"hull", "amount": 1 }}],
         "image": "https://squadbuilder.fantasyflightgames.com/card_images/Card_Upgrade_73.png",
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/Card_art_XW_U_73.jpg",
         "ffg": 297
@@ -169,7 +169,7 @@
           }
         ],
         "slots": ["Modification"],
-        "grants": [{ "type": "stat", "value": "shields", "amount": 1 }],
+        "grants": [{ "type": "stat", "value": {"type":"shields", "amount": 1 }}],
         "image": "https://squadbuilder.fantasyflightgames.com/card_images/Card_Upgrade_75.png",
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/Card_art_XW_U_75.jpg",
         "ffg": 299
@@ -344,7 +344,7 @@
         "slots": ["Modification"],
         "restrictions": [{ "sizes": ["Small", "Medium"] }],
         "grants": [
-          { "type": "stat", "value": "shields", "amount": -1 },
+          { "type": "stat", "value":{"type": "shields", "amount": -1} },
           {
             "type": "action",
             "value": { "type": "Reinforce", "difficulty": "White" }
@@ -476,8 +476,8 @@
         "title": "Drop-Seat bay",
         "type": "Modification",
         "grants": [
-          { "type": "slot", "value": "Crew", "amount": 2 },
-          { "type": "slot", "value": "Device", "amount": -1 }
+          { "type": "slot", "value": {"type":"Crew", "amount": 2 }},
+          { "type": "slot", "value": {"type":"Device", "amount": -1 }}
         ],
         "slots": ["Modification"]
       }

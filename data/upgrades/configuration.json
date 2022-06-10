@@ -54,8 +54,8 @@
         "ability": "While you have exactly 1 disarm token, you can still perform [Torpedo] and [Missile] attacks against targets you have locked. If you do, you cannot spend your lock during the attack. Add [Torpedo] and [Missile] slots.",
         "slots": ["Configuration"],
         "grants": [
-          { "type": "slot", "value": "Torpedo", "amount": 1 },
-          { "type": "slot", "value": "Missile", "amount": 1 }
+          { "type": "slot", "value": {"type":"Torpedo", "amount": 1 }},
+          { "type": "slot", "value": {"type":"Missile", "amount": 1 }}
         ],
         "image": "https://squadbuilder.fantasyflightgames.com/card_images/Card_Upgrade_125.png",
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/Card_art_XW_U_125.jpg",
@@ -186,7 +186,7 @@
         "type": "Configuration",
         "ability": "While you have exactly 1 disarm token, you can still perform [Cannon] attacks. While you perform a [Cannon] attack while disarmed, roll a maximum of 3 attack dice. Add [Cannon] slot.",
         "slots": ["Configuration"],
-        "grants": [{ "type": "slot", "value": "Cannon", "amount": 1 }],
+        "grants": [{ "type": "slot", "value": {"type":"Cannon", "amount": 1 }}],
         "image": "https://squadbuilder.fantasyflightgames.com/card_images/Card_Upgrade_126.png",
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/Card_art_XW_U_126.jpg",
         "ffg": 351
@@ -238,9 +238,9 @@
         "type": "Configuration",
         "slots": ["Configuration"],
         "grants": [
-          { "type": "stat", "value": "agility", "amount": -1 },
-          { "type": "stat", "value": "shields", "amount": 2 },
-          { "type": "stat", "value": "attack", "arc": "Front Arc", "amount": 1 }
+          { "type": "stat", "value": {"type":"agility", "amount": -1 }},
+          { "type": "stat", "value": {"type":"shields", "amount": 2 }},
+          { "type": "stat", "value": {"type":"attack", "attack":{"arc": "Front Arc"}, "amount": 1 }}
         ],
         "ffg": 548,
         "image": "https://squadbuilder.fantasyflightgames.com/card_images/en/515903e04a0d06a9200860698326896d.png",
@@ -248,7 +248,7 @@
         "text": "The Delta-7B was designed as a heavier variant of the Delta-7 Aethersprite-class Interceptor, identifiable by the repositioned astromech slot. Many Jedi Generals favor this craft's greater firepower and durability."
       }
     ],
-    "cost": { "value": "???" },
+    "cost": { "value": 999 },
     "restrictions": [{ "ships": ["delta7aethersprite"] }],
     "standard": false,
     "extended": false,
@@ -319,12 +319,12 @@
         "type": "Configuration",
         "slots": ["Configuration"],
         "grants": [
-          { "type": "slot", "value": "cannon", "amount": 1 },
-          { "type": "slot", "value": "turret", "amount": 1 },
-          { "type": "slot", "value": "missile", "amount": 1 },
-          { "type": "stat", "value": "hull", "amount": 2 },
-          { "type": "stat", "value": "shields", "amount": -2 },
-          { "type": "stat", "value": "energy", "amount": 1 }
+          { "type": "slot", "value": {"type":"cannon", "amount": 1 }},
+          { "type": "slot", "value": {"type":"turret", "amount": 1 }},
+          { "type": "slot", "value": {"type":"missile", "amount": 1 }},
+          { "type": "stat", "value": {"type":"hull", "amount": 2 }},
+          { "type": "stat", "value": {"type":"shields", "amount": -2 }},
+          { "type": "stat", "value": {"type":"energy", "amount": 1 }}
         ],
         "ffg": 780,
         "image": "https://images-cdn.fantasyflightgames.com/filer_public/fe/93/fe93367f-f999-477a-9e52-7be684649ff7/swz55_corsair-refit_card.png",
@@ -637,7 +637,7 @@
           "maxrange": 3,
           "ordnance": false
         },
-        "grants": [{ "type": "arc", "value": "Single Turret Arc" }],
+        "grants": [{ "type": "arc", "value": {"type": "Single Turret Arc" }}],
         "ffg": 926,
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/fb4cf1a8b51ab44fddee4c9dfbc280a8.jpg"
       }
@@ -671,7 +671,13 @@
             "type": "action",
             "value": { "type": "Reload", "difficulty": "White" }
           },
-          { "type": "stat", "value": "shields", "amount": 2 }
+          { 
+            "type": "stat",
+            "value": {
+              "type": "shields", 
+              "amount": 2
+            }
+          }
         ],
         "image": "???",
         "ffg": 929,

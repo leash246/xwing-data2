@@ -512,7 +512,7 @@
               "linked": { "type": "Coordinate", "difficulty": "Purple" }
             }
           },
-          { "type": "force", "value": { "side": ["dark"] }, "amount": 1 }
+          { "type": "force", "value": { "side": ["dark"] , "amount": 1 }}
         ],
         "ffg": 727,
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/14ae4cbb0383462f172497c35890440e.jpg"
@@ -616,7 +616,7 @@
         "artwork": "https://infinitearenas.com/xw2/images/upgrades/combatboardingtube.png"
       }
     ],
-    "cost": { "value": "?" },
+    "cost": { "value": 0 },
     "restrictions": [
       { "ships": ["gauntletfighter"] }
     ]

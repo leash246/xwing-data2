@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "cOdPOkvH/SMvu5siahcmT9K6FL0pSFI7A9VRU3NHtHfHYltagXKUlRaw8Rv5B0pogT0P6K6REPwWbEyNUDi1Lw==",
+  "success": true,
+  "projectFilePath": "C:\\dev\\xwing-data2\\xwing-cards\\xwing-cards.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Default.LAPTOP-DFBMPTVT\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Default.LAPTOP-DFBMPTVT\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Default.LAPTOP-DFBMPTVT\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Default.LAPTOP-DFBMPTVT\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Default.LAPTOP-DFBMPTVT\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Default.LAPTOP-DFBMPTVT\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
