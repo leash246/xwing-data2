@@ -1,4 +1,4 @@
-namespace XwingCards.Api.Models;
+namespace XWingCards.Api.Models;
 public class Cost
 {
     public int Value { get; set; }

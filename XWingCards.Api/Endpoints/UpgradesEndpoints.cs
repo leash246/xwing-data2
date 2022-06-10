@@ -1,5 +1,5 @@
-﻿using XwingCards.Api.Models;
-using XwingCards.Api.Repositories;
+﻿using XWingCards.Api.Models;
+using XWingCards.Api.Repositories;
 
 namespace XWingCards.Api.Endpoints;
 
