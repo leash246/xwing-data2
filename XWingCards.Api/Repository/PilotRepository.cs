@@ -4,7 +4,7 @@ using XWingCards.Api.Models;
 namespace XWingCards.Api.Repositories;
 public class PilotRepository : IRepository<PilotCard>
 {
-    private const string PilotPath = "\\pilots";
+    private const string PilotPath = "pilots";
     public Dictionary<string, List<PilotCard>> Cards { get; set; } = new Dictionary<string, List<PilotCard>>();
     private static readonly string[] Factions = new string[] { "rebel-alliance", "galactic-empire", "scum-and-villainy", "first-order", "resistance", "galactic-republic", "separatist-alliance" };
 

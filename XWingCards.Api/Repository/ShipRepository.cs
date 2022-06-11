@@ -3,7 +3,7 @@ using XWingCards.Api.Models;
 namespace XWingCards.Api.Repositories;
 public class ShipRepository : IRepository<Ship>
 {
-    private const string PilotPath = "\\pilots";
+    private const string PilotPath = "pilots";
     public Dictionary<string, List<Ship>> Cards { get; set; } = new Dictionary<string, List<Ship>>();
     public List<string> Failures { get; } = new List<string>();
     private static readonly string[] Factions = new string[] { "rebel-alliance", "galactic-empire", "scum-and-villainy", "first-order", "resistance", "galactic-republic", "separatist-alliance" };
