@@ -1,35 +1,34 @@
-using System.Text.Json;
 using XWingCards.Api.Models;
 
 namespace XWingCards.Api.Repositories;
-public class UpgradeCardRepository : ICardRepository<UpgradeCard>
+public class UpgradeCardRepository : IRepository<UpgradeCard>
 {
+    private const string UpgradesPath = "..\\data\\upgrades";
     public Dictionary<string, List<UpgradeCard>> Cards { get; set; } = new Dictionary<string, List<UpgradeCard>>();
-
-
-    public List<string> Failures => new List<string>();
-
-    public UpgradeCardRepository() {
-        LoadCards();
-    }
-    public IEnumerable<UpgradeCard> GetFilteredCards(string filter)
+    public void LoadCards()
     {
-        if (!Cards.Any())
-            LoadCards();
-        return Cards[filter];
-    }
-    private void LoadCards()
-    {
-        foreach (var file in Directory.GetFiles("..\\data\\upgrades"))
+
+        var cards = new Dictionary<string, List<UpgradeCard>>();
+        foreach (var file in Directory.GetFiles(UpgradesPath))
         {
             var filename = Path.GetFileNameWithoutExtension(file);
             var json = File.ReadAllText(file);
-            var upgrades = CardDeserializer.DeserializeCards<UpgradeCard>(json);
-            SetHotacCost(upgrades, filename);
-            Cards.Add(filename, upgrades);
+            var upgrades = CardDeserializer.DeserializeList<UpgradeCard>(json);
+            SetUpgradeHotacCost(upgrades, filename);
+            cards.Add(filename, upgrades);
         }
+        PushData(cards);
     }
-    private static void SetHotacCost(List<UpgradeCard> cards, string slot)
+    public void PushData(Dictionary<string, List<UpgradeCard>> cards)
+    {
+        Cards = cards;
+    }
+
+    public IEnumerable<UpgradeCard> GetFilteredCards(string filter)
+    {
+        return Cards[filter];
+    }
+    private static void SetUpgradeHotacCost(List<UpgradeCard> cards, string slot)
     {
         foreach (var card in cards)
         {
@@ -39,7 +38,6 @@ public class UpgradeCardRepository : ICardRepository<UpgradeCard>
             int multiplier() => slot switch
             {
                 "talent" => 2,
-                "pilot" => 3 + card.Sides!.First().Force?.Value ?? 0,
                 _ => 1
             };
         }

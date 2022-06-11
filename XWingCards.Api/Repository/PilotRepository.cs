@@ -2,46 +2,55 @@ using System.Text.Json;
 using XWingCards.Api.Models;
 
 namespace XWingCards.Api.Repositories;
-public class PilotRepository : ICardRepository<PilotCard>
+public class PilotRepository : IRepository<PilotCard>
 {
     private const string PilotPath = "..\\data\\pilots";
-    public Dictionary<string, List<PilotCard>> Cards { get; } = new Dictionary<string, List<PilotCard>>();
-    public List<string> Failures { get; } = new List<string>();
-    private string[] Factions = new string[] { "rebel-alliance", "galactic-empire", "scum-and-villainy", "first-order", "resistance", "galactic-republic", "separatist-alliance" };
+    public Dictionary<string, List<PilotCard>> Cards { get; set; } = new Dictionary<string, List<PilotCard>>();
+    private static readonly string[] Factions = new string[] { "rebel-alliance", "galactic-empire", "scum-and-villainy", "first-order", "resistance", "galactic-republic", "separatist-alliance" };
 
-    public PilotRepository()
-    {
-        LoadCards();
-    }
-    private void LoadCards()
+    public void LoadCards()
     {
         foreach (var dir in Directory.GetDirectories(PilotPath))
         {
-            foreach (var file in Directory.GetFiles($"{PilotPath}\\{dir}"))
+            var faction = dir.Split("\\").Last();
+            var factionPilots = new List<PilotCard>();
+            foreach (var file in Directory.GetFiles(dir))
             {
-                var shipType = Path.GetFileNameWithoutExtension(file);
                 var json = File.ReadAllText(file);
-                try {
-                var ships = CardDeserializer.DeserializeCards<Ship>(json);
-                foreach (var ship in ships)
-                {
-                    Cards.Add(dir!, ship.Pilots!.ToList());
-                }
-                } catch  {
-                    Failures.Add(dir + " - " + shipType);
-                }
+                var ship = CardDeserializer.Deserialize<Ship>(json);
+                UpdatePilotShips(ship!);
+                factionPilots.AddRange(ship!.Pilots!.ToList());
             }
+            Cards.Add(faction, factionPilots);
         }
+    }
+    public void PushData(Dictionary<string, List<PilotCard>> cards)
+    {
+        Cards = cards;
     }
     public IEnumerable<PilotCard> GetFilteredCards(string filter)
     {
         if (FilterIsFactionName(filter))
             return Cards[filter];
-        else 
+        else
             return Cards.SelectMany(x => x.Value).Where(v => v.XwsShip == filter).ToList();
     }
-    private bool FilterIsFactionName(string filter)
+    private static bool FilterIsFactionName(string filter)
     {
         return Factions.Contains(filter);
+    }
+    private static void UpdatePilotShips(Ship ship)
+    {
+        foreach (var pilot in ship.Pilots!)
+        {
+            pilot.XwsShip = ship.Xws;
+            SetHotacCost(pilot);
+        }
+    }
+    private static void SetHotacCost(PilotCard pilot)
+    {
+        pilot.HotacCost = pilot.Initiative * multiplier();
+
+        int multiplier() => pilot.Force is null ? 2 : pilot.Force.Value + 3;
     }
 }

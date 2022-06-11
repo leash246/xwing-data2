@@ -5,9 +5,9 @@ namespace XWingCards.Api.Endpoints;
 
 public class UpgradesEndpoints
 {
-    private readonly ICardRepository<UpgradeCard> _repository;
+    private readonly IRepository<UpgradeCard> _repository;
 
-    public UpgradesEndpoints(ICardRepository<UpgradeCard> repository)
+    public UpgradesEndpoints(IRepository<UpgradeCard> repository)
     {
         this._repository = repository;
     }

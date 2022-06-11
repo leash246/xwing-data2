@@ -5,14 +5,11 @@ namespace XWingCards.Api.Endpoints;
 
 public class PilotsEndpoints
 {
-    private readonly ICardRepository<PilotCard> _repository;
+    private readonly IRepository<PilotCard> _repository;
 
-    public PilotsEndpoints(ICardRepository<PilotCard> repository)
+    public PilotsEndpoints(IRepository<PilotCard> repository)
     {
         this._repository = repository;
-    }
-    public List<string> FailedShips() {
-        return _repository.Failures;
     }
     public List<PilotCard> PilotsByFaction(string faction)
     {
