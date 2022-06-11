@@ -72,3 +72,4 @@ typings/
 /XWingCards.Api/bin/Debug/net6.0
 /XWingCards.Api/.vs
 /.vs
+/XWingCards.Api/bin/Release/net6.0

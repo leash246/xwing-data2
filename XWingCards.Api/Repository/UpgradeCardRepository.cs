@@ -3,13 +3,19 @@ using XWingCards.Api.Models;
 namespace XWingCards.Api.Repositories;
 public class UpgradeCardRepository : IRepository<UpgradeCard>
 {
-    private const string UpgradesPath = "..\\data\\upgrades";
+    private const string UpgradesPath = "\\upgrades";
     public Dictionary<string, List<UpgradeCard>> Cards { get; set; } = new Dictionary<string, List<UpgradeCard>>();
+    public IConfiguration Configuration { get; }
+
+    public UpgradeCardRepository(IConfiguration configuration)
+    {
+        Configuration = configuration;
+    }
     public void LoadCards()
     {
 
         var cards = new Dictionary<string, List<UpgradeCard>>();
-        foreach (var file in Directory.GetFiles(UpgradesPath))
+        foreach (var file in Directory.GetFiles(Configuration["DataPath"] + UpgradesPath))
         {
             var filename = Path.GetFileNameWithoutExtension(file);
             var json = File.ReadAllText(file);
