@@ -18,7 +18,7 @@ public class PilotRepository : IRepository<PilotCard>
     {
         foreach (var dir in Directory.GetDirectories(Configuration["DataPath"] + PilotPath))
         {
-            var faction = dir.Split("\\").Last();
+            var faction = dir.Split(new char[] { '\\', '/' }).Last();
             var factionPilots = new List<PilotCard>();
             foreach (var file in Directory.GetFiles(dir))
             {

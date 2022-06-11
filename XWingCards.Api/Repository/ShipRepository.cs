@@ -18,7 +18,7 @@ public class ShipRepository : IRepository<Ship>
     {
         foreach (var dir in Directory.GetDirectories(Configuration["DataPath"] + PilotPath))
         {
-            var faction = dir.Split("\\").Last();
+            var faction = dir.Split(new char[] {'\\','/'}).Last();
             var factionShips = new List<Ship>();
             foreach (var file in Directory.GetFiles(dir))
             {
