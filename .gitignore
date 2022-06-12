@@ -73,3 +73,5 @@ typings/
 /XWingCards.Api/.vs
 /.vs
 /XWingCards.Api/bin/Release/net6.0
+/players
+/XWingCards.Api/Properties/PublishProfiles

@@ -21,11 +21,13 @@ builder.Services.Configure<JsonOptions>(options =>
 builder.Services.AddSingleton<IRepository<UpgradeCard>, UpgradeCardRepository>();
 builder.Services.AddSingleton<IRepository<PilotCard>, PilotRepository>();
 builder.Services.AddSingleton<IRepository<Ship>, ShipRepository>();
+builder.Services.AddSingleton<IPlayerRepository, PlayerRepository>();
 
 builder.Services.AddSingleton<IRepositoryLoader, RepositoryLoader>();
 builder.Services.AddSingleton(ctx => new UpgradesEndpoints(repository: ctx.GetService<IRepository<UpgradeCard>>()!));
 builder.Services.AddSingleton(ctx => new PilotsEndpoints(repository: ctx.GetService<IRepository<PilotCard>>()!));
 builder.Services.AddSingleton(ctx => new ShipsEndpoints(repository: ctx.GetService<IRepository<Ship>>()!));
+builder.Services.AddSingleton(ctx => new PlayersEndpoints(repository: ctx.GetService<IPlayerRepository>()!));
 
 var app = builder.Build();
 
@@ -39,37 +41,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.MapEndpoints();
 
-app.MapGet("/upgrades/{slot}", (string slot, UpgradesEndpoints endoints) =>
-{
-    return endoints.UpgradesBySlot(slot);
-})
-.WithName("GetUpgradesBySlot");
-app.MapGet("/upgrades", (bool? standard, bool? extended, bool? epic, UpgradesEndpoints endoints) =>
-{
-    return endoints.AllUpgrades(standard ?? true, extended ?? true, epic ?? false);
-})
-.WithName("GetAllUpgrades");
-app.MapGet("/pilots/{faction}", (string faction, string? ship, PilotsEndpoints endoints) =>
-{
-    if (string.IsNullOrEmpty(ship))
-        return endoints.PilotsByFaction(faction);
-    return endoints.PilotsByShip(faction, ship);
-})
-.WithName("GetPilotsByFaction");
-app.MapGet("/pilots", (bool? standard, bool? extended, bool? epic, PilotsEndpoints endoints) =>
-{
-    return endoints.AllUpgrades(standard ?? true, extended ?? true, epic ?? false);
-})
-.WithName("GetAllPilots");
-app.MapGet("/ships/{faction}", (string faction, ShipsEndpoints endoints) =>
-{
-    return endoints.ShipsByFaction(faction);
-})
-.WithName("GetShipsByFaction");
-app.MapGet("/ships", (bool? standard, bool? extended, bool? epic, ShipsEndpoints endoints) =>
-{
-    return endoints.AllShips(standard ?? true, extended ?? true, epic ?? false);
-})
-.WithName("GetAllShips");
 app.Run();
