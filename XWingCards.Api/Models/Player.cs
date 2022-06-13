@@ -9,4 +9,6 @@ public class Player
     public int EarnedXp { get; set; }
     public int SpentXp { get; set; }
     public UpgradeSlot[] UpgradeSlots { get; set; }
+    public List<string> UnequippedUpgrades { get; set; }
+    public List<string> UnequippedPilots { get; set; }
 }

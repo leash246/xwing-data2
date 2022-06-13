@@ -30,7 +30,8 @@ public static class EndpointMapper
     {
         app.MapGet("/ships/{faction}", (string faction, ShipsEndpoints endoints) =>
         {
-            return endoints.ShipsByFaction(faction);
+            var values = endoints.ShipsByFaction(faction);
+            return values;
         })
         .WithName("GetShipsByFaction");
         app.MapGet("/ships", (bool? standard, bool? extended, bool? epic, ShipsEndpoints endoints) =>

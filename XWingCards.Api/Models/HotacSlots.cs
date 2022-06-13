@@ -40,8 +40,8 @@ public class UpgradeSlot
         Number = number;
         InitiativeRequirement = initiativeRequirement;
         Slot = slot;
-        Xws = Xws;
-        IsPilot = IsPilot;
+        Xws = xws;
+        IsPilot = isPilot;
     }
 
     public int Number { get; set; }
@@ -50,15 +50,4 @@ public class UpgradeSlot
     public int InitiativeRequirement { get; set; }
     public bool IsPilot { get; set; }
 
-    internal void PurchaseUpgrade(string upgradeType, string upgrade)
-    {
-        if (upgradeType == null)
-            Xws = null;
-        else
-            Xws = upgrade;
-        if (upgradeType == "pilot")
-        {
-            IsPilot = true;
-        }
-    }
 }

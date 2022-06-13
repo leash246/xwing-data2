@@ -45,6 +45,7 @@ public class ShipRepository : IRepository<Ship>
     {
         if (ship.Pilots is not null)
         {
+            ship.ShipAbility = ship.Pilots.First().ShipAbility?.Name ?? "";
             ship.Standard = ship.Pilots.Any(p => p.Standard);
             ship.Extended = ship.Pilots.Any(p => p.Extended);
             ship.Epic = ship.Pilots.Any(p => p.Epic);

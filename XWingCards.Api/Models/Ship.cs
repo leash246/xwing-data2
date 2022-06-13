@@ -7,6 +7,7 @@ public class Ship : ICard
     public string? Faction { get; set; }
     public string? Icon { get; set; }
     public string? Size { get; set; }
+    public string? ShipAbility { get; set; }
     public string[]? Dial { get; set; }
     public string[]? DialCodes { get; set; }
     public Stat[]? Stats { get; set; }

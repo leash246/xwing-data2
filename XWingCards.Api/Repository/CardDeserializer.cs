@@ -10,6 +10,7 @@ public static class CardDeserializer {
             PropertyNameCaseInsensitive = true, // JSON is case-insensitive
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase, // JSON is camelCase
             WriteIndented = true, // JSON is indented
+            AllowTrailingCommas = true,
         };
         json = json.Replace("non-limited", "nonLimited");
         if (string.IsNullOrWhiteSpace(json))

@@ -777,7 +777,7 @@
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/1ae514eedd2e4129b311b69c4174e5f6.jpg"
       }
     ],
-    "restrictions": [{ "ships": ["tieddefender"] }],
+    "restrictions": [{ "ships": ["btla4ywing", "btanr2ywing"] }],
     "cost": { "value": 1 },
     "standard": false,
     "extended": true,
@@ -797,6 +797,7 @@
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/a1b35914e278f332b59e04749c90452c.jpg"
       }
     ],
+    "restrictions": [{ "ships": ["tieddefender"] }],
     "cost": { "value": 0 },
     "standard": true,
     "extended": true,
