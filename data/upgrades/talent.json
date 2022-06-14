@@ -574,6 +574,7 @@
     ],
     "name": "Gravitic Deflection",
     "limited": 0,
+    "restrictions": [{ "ships": ["nantexclassstarfighter"] }],
     "cost": { "value": 4 },
     "xws": "graviticdeflection",
     "standard": true,
@@ -604,6 +605,7 @@
         "image": "https://squadbuilder.fantasyflightgames.com/card_images/en/a060961e9ee792e605c75aaf6d65ad34.png"
       }
     ],
+    "restrictions": [{ "factions": ["First Order"] }],
     "cost": { "value": 2 },
     "standard": true,
     "extended": true,
@@ -643,6 +645,7 @@
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/d30db8383beca909eca0993a9299d226.jpg"
       }
     ],
+    "restrictions": [{ "ships": ["t65xwing","t70xwing"] }],
     "cost": { "value": 2 },
     "standard": true,
     "extended": true,
@@ -682,6 +685,7 @@
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/6c495e5b96157ab865a895c70d614ae6.jpg"
       }
     ],
+    "restrictions": [{"sizes":["Small","Medium"]}],
     "cost": { "value": 1 },
     "standard": true,
     "extended": true,
@@ -701,6 +705,7 @@
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/9651ea60a9c2b74779fbcadcc989c171.jpg"
       }
     ],
+    "restrictions": [{ "ships": ["rz1awing","rz2awing"] }],
     "cost": { "value": 1 },
     "standard": true,
     "extended": true,
@@ -777,7 +782,7 @@
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/1ae514eedd2e4129b311b69c4174e5f6.jpg"
       }
     ],
-    "restrictions": [{ "ships": ["btla4ywing", "btanr2ywing"] }],
+    "restrictions": [{ "ships": ["tieddefender"] }],
     "cost": { "value": 1 },
     "standard": false,
     "extended": true,
@@ -797,7 +802,7 @@
         "artwork": "https://squadbuilder.fantasyflightgames.com/card_art/a1b35914e278f332b59e04749c90452c.jpg"
       }
     ],
-    "restrictions": [{ "ships": ["tieddefender"] }],
+    "restrictions": [{ "ships": ["btla4ywing", "btanr2ywing", "btlbywing"] }],
     "cost": { "value": 0 },
     "standard": true,
     "extended": true,
